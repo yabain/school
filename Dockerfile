@@ -1,7 +1,7 @@
 FROM php:8.0-apache
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y libzip-dev unzip wget php-zip unzip \ 
+RUN sudo apt-get install -y php8.1-cli php8.1-common php8.1-mysql php8.1-zip php8.1-gd php8.1-mbstring php8.1-curl php8.1-xml php8.1-bcmath \ 
     && docker-php-ext-install zip pdo_mysql 
 
 RUN wget -O composer-setup.php https://getcomposer.org/installer \
