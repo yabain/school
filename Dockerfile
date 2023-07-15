@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     libzip-dev unzip wget php-cli php-zip unzip && docker-php-ext-install zip pdo_mysql 
 
 RUN wget -O composer-setup.php https://getcomposer.org/installer \
-    php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+    && php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 # Enable Apache rewrite module
 RUN a2enmod rewrite
